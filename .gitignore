@@ -1,0 +1,45 @@
+# Godot-specific ignores
+.import/
+*.translation
+export_presets.cfg
+
+# Godot 4+ specific
+.godot/
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/tool-specific ignores
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Build outputs
+builds/
+*.apk
+*.aab
+*.ipa
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.backup
+*.bak
+~*
+
+# Logs
+*.log
