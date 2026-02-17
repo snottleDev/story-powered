@@ -37,9 +37,9 @@
 **Immediate Tasks**:
 - [x] Create GitHub repository
 - [x] Add core project files (.gitignore, README, CHANGELOG, project.godot)
-- [ ] Complete .claude/ folder setup
-- [ ] Clone repository locally
-- [ ] Create directory structure
+- [x] Complete .claude/ folder setup
+- [x] Clone repository locally
+- [x] Create directory structure
 - [ ] Begin Milestone 1: Core Framework
 
 ---
