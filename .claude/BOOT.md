@@ -93,12 +93,28 @@
 - Prototype Sprint before Milestone 1 — build 6 interaction experiments first
 - Prototypes use rough story context (suitcase, cleaning, focus, memory, polaroids, painting)
 - Session log filenames include time to avoid same-day conflicts: `YYYY-MM-DD_HHMM_session_##.md`
+- Claude Code is the sole writer to the repository — Claude.ai (browser) does not commit or push
 
 **Technical Approach**:
 - Godot 4.x for mobile (Android & iOS)
 - ~12 reusable interaction types initially
 - Autoload singletons for core systems
 - Assets organized by type, not by chapter
+
+---
+
+## Tool Responsibilities
+
+**IMPORTANT — One writer rule**: To prevent files getting out of sync, only Claude Code (terminal) makes commits and pushes to GitHub. Claude.ai (browser) is read-only on the repository.
+
+| Task | Claude.ai (browser) | Claude Code (terminal) |
+|------|-------------------|----------------------|
+| Planning & decisions | ✅ Yes | — |
+| Reading files for context | ✅ Yes | ✅ Yes |
+| Writing session log content | ✅ Drafts it | ✅ Creates & commits it |
+| Updating BOOT.md | ❌ No | ✅ Yes |
+| Creating/editing project files | ❌ No | ✅ Yes |
+| Git commits & pushes | ❌ No | ✅ Yes |
 
 ---
 
@@ -112,10 +128,10 @@
 
 **At Session End**:
 1. Claude asks: "Should I create a session log?"
-2. If yes, Claude generates summary in `.claude/session_logs/`
-3. Filename format: `YYYY-MM-DD_HHMM_session_##.md` (e.g. `2026-02-17_1430_session_03.md`)
-4. Claude updates this BOOT.md with current status
-5. User commits changes
+2. If yes, Claude drafts the summary here in the browser
+3. User switches to Claude Code to create, commit and push the log
+4. Filename format: `YYYY-MM-DD_HHMM_session_##.md` (e.g. `2026-02-17_1430_session_03.md`)
+5. Claude Code also updates BOOT.md with current status and commits it
 
 ---
 
