@@ -23,27 +23,40 @@
 
 ## Current Status
 
-**Current Milestone**: Milestone 1 - Core Framework (ready to start)
+**Current Milestone**: Prototype Sprint (before Milestone 1)
 **Active Branch**: `dev`
 **Last Session**: 2026-02-17
-**Last Commit**: Directory structure created, dev branch pushed to GitHub
+**Last Commit**: Prototype Sprint planned, directory structure live on dev branch
 
 ---
 
 ## Next Priority
 
-**Current Focus**: Begin Milestone 1 - Core Framework
+**Current Focus**: Prototype Sprint — 6 standalone interaction experiments in `/prototypes`
 
-**Immediate Tasks**:
-- [x] Create GitHub repository
-- [x] Add core project files (.gitignore, README, CHANGELOG, project.godot)
-- [x] Complete .claude/ folder setup
-- [x] Clone repository locally
-- [x] Create directory structure
-- [x] Push dev branch to GitHub
+**Prototype Sprint — Build Order**:
+- [ ] Prototype 1: Suitcase packing — drag & drop to target zones
+- [ ] Prototype 2: Cleaning room — tap to remove objects
+- [ ] Prototype 3: Bring into focus — slider(s)
+- [ ] Prototype 4: Memory game — sequential tap + match logic
+- [ ] Prototype 5: Polaroid map — shake/swipe gesture + reveal animation
+- [ ] Prototype 6: Painting reveal — continuous brush stroke + progressive image reveal
+
+**After Sprint**:
+- [ ] Review what felt good, decide final ~12 interaction types
 - [ ] Finalize JSON data format → `docs/data_format.md`
 - [ ] Create game design document → `docs/game_design.md`
-- [ ] Begin Milestone 1: Core Framework (autoloads, basic scene setup)
+- [ ] Begin Milestone 1: Core Framework
+
+---
+
+## Prototype Sprint Notes
+
+**Goal**: Discover what interactions feel right before locking down architecture or data format.  
+**Rules**: Each prototype is fully self-contained — one Godot scene, no shared code, no architecture. Feel over structure.  
+**Each prototype should have**: A rough story context + a simple success state (input → response → feedback).  
+**Location**: `/prototypes` folder in the repo.  
+**Build order rationale**: Start simple (drag, tap) and work up to complex (brush reveal, shake).
 
 ---
 
@@ -71,6 +84,8 @@
 - Pure visual storytelling (no text in scenes, text in menus only)
 - Auto-advance scenes after interaction completion + animation
 - Use `gh auth setup-git` to bypass macOS keychain for Git pushes
+- Prototype Sprint before Milestone 1 — build 6 interaction experiments first
+- Prototypes use rough story context (suitcase, cleaning, focus, memory, polaroids, painting)
 
 **Technical Approach**:
 - Godot 4.x for mobile (Android & iOS)
