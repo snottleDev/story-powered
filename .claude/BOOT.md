@@ -23,16 +23,16 @@
 
 ## Current Status
 
-**Current Milestone**: Milestone 1 - Core Framework  
-**Active Branch**: `main` (will create `dev` branch when starting development)  
-**Last Session**: 2026-02-16  
-**Last Commit**: Initial project structure setup
+**Current Milestone**: Milestone 1 - Core Framework (ready to start)
+**Active Branch**: `dev`
+**Last Session**: 2026-02-17
+**Last Commit**: Directory structure created, dev branch pushed to GitHub
 
 ---
 
 ## Next Priority
 
-**Current Focus**: Complete Step 3 - Set up .claude/ folder structure
+**Current Focus**: Begin Milestone 1 - Core Framework
 
 **Immediate Tasks**:
 - [x] Create GitHub repository
@@ -40,7 +40,10 @@
 - [x] Complete .claude/ folder setup
 - [x] Clone repository locally
 - [x] Create directory structure
-- [ ] Begin Milestone 1: Core Framework
+- [x] Push dev branch to GitHub
+- [ ] Finalize JSON data format → `docs/data_format.md`
+- [ ] Create game design document → `docs/game_design.md`
+- [ ] Begin Milestone 1: Core Framework (autoloads, basic scene setup)
 
 ---
 
@@ -67,6 +70,7 @@
 - Two chapters for proof of concept
 - Pure visual storytelling (no text in scenes, text in menus only)
 - Auto-advance scenes after interaction completion + animation
+- Use `gh auth setup-git` to bypass macOS keychain for Git pushes
 
 **Technical Approach**:
 - Godot 4.x for mobile (Android & iOS)
@@ -92,4 +96,4 @@
 
 ---
 
-*Last Updated: 2026-02-16*
+*Last Updated: 2026-02-17*
