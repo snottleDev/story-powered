@@ -92,6 +92,7 @@
 - Use `gh auth setup-git` to bypass macOS keychain for Git pushes
 - Prototype Sprint before Milestone 1 — build 6 interaction experiments first
 - Prototypes use rough story context (suitcase, cleaning, focus, memory, polaroids, painting)
+- Session log filenames include time to avoid same-day conflicts: `YYYY-MM-DD_HHMM_session_##.md`
 
 **Technical Approach**:
 - Godot 4.x for mobile (Android & iOS)
@@ -112,8 +113,9 @@
 **At Session End**:
 1. Claude asks: "Should I create a session log?"
 2. If yes, Claude generates summary in `.claude/session_logs/`
-3. Claude updates this BOOT.md with current status
-4. User commits changes
+3. Filename format: `YYYY-MM-DD_HHMM_session_##.md` (e.g. `2026-02-17_1430_session_03.md`)
+4. Claude updates this BOOT.md with current status
+5. User commits changes
 
 ---
 
