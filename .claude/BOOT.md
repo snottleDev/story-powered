@@ -7,16 +7,16 @@
 ## Load Order (Claude reads these automatically)
 
 1. **`.claude/user_profile.md`** - Your skills, preferences, and how Claude should help
-2. **`.claude/team_roles.md`** - Active virtual team member roles for this project  
+2. **`.claude/team_roles.md`** - Active virtual team member roles for this project
 3. **`.claude/session_logs/README.md`** - Context from previous sessions
 
 ---
 
 ## Project Overview
 
-**Project Name**: Story-Powered  
-**Type**: Interactive Story Game (Portrait, Mobile)  
-**Platform**: Android & iOS via Godot  
+**Project Name**: Story-Powered
+**Type**: Interactive Story Game (Portrait, Mobile)
+**Platform**: Android & iOS via Godot
 **Architecture**: Data-driven story system with reusable interaction mechanics
 
 ---
@@ -26,7 +26,7 @@
 **Current Milestone**: Prototype Sprint (before Milestone 1)
 **Active Branch**: `dev`
 **Last Session**: 2026-02-17
-**Last Commit**: Prototype Sprint planned, directory structure live on dev branch
+**Last Commit**: Prototype 1 — suitcase packing scene built and committed
 
 ---
 
@@ -35,12 +35,17 @@
 **Current Focus**: Prototype Sprint — 6 standalone interaction experiments in `/prototypes`
 
 **Prototype Sprint — Build Order**:
-- [ ] Prototype 1: Suitcase packing — drag & drop to target zones
+- [x] Prototype 1: Suitcase packing — drag & drop to target zones
 - [ ] Prototype 2: Cleaning room — tap to remove objects
 - [ ] Prototype 3: Bring into focus — slider(s)
 - [ ] Prototype 4: Memory game — sequential tap + match logic
 - [ ] Prototype 5: Polaroid map — shake/swipe gesture + reveal animation
 - [ ] Prototype 6: Painting reveal — continuous brush stroke + progressive image reveal
+
+**iOS Testing**:
+- [x] Install Xcode & partial iOS export setup
+- [ ] Connect iPhone via USB, provision device in Xcode
+- [ ] Test prototypes on device — validate touch feel
 
 **After Sprint**:
 - [ ] Review what felt good, decide final ~12 interaction types
@@ -52,22 +57,23 @@
 
 ## Prototype Sprint Notes
 
-**Goal**: Discover what interactions feel right before locking down architecture or data format.  
-**Rules**: Each prototype is fully self-contained — one Godot scene, no shared code, no architecture. Feel over structure.  
-**Each prototype should have**: A rough story context + a simple success state (input → response → feedback).  
-**Location**: `/prototypes` folder in the repo.  
+**Goal**: Discover what interactions feel right before locking down architecture or data format.
+**Rules**: Each prototype is fully self-contained — one Godot scene, no shared code, no architecture. Feel over structure.
+**Each prototype should have**: A rough story context + a simple success state (input → response → feedback).
+**Location**: `/prototypes` folder in the repo.
 **Build order rationale**: Start simple (drag, tap) and work up to complex (brush reveal, shake).
 
 ---
 
 ## Quick Reference Links
 
-**Repository**: https://github.com/snottleDev/story-powered  
+**Repository**: https://github.com/snottleDev/story-powered
 **Key Documents**:
-- Game Design: `docs/game_design.md` (to be created)
-- Data Format: `docs/data_format.md` (to be created)
-- Milestones: `docs/milestones.md` (to be created)
-- Interaction Library: `docs/interaction_library.md` (to be created)
+- Game Design: `docs/game_design.md`
+- Data Format: `docs/data_format.md`
+- Milestones: `docs/milestones.md`
+- Interaction Library: `docs/interaction_library.md`
+- Prototype 1: `prototypes/01_suitcase_packing/`
 
 ---
 
