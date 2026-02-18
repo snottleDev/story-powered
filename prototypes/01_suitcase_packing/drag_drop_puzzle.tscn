@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://prototypes/01_suitcase_packing/drag_drop_puzzle.gd" id="1_engine"]
+
+[node name="DragDropPuzzle" type="Node2D"]
+script = ExtResource("1_engine")

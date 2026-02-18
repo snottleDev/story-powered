@@ -7,13 +7,17 @@ signal item_packed(item_id: String)
 @export var item_color: Color = Color.WHITE
 @export var item_size: Vector2 = Vector2(160, 160)
 
+## Optional texture — when set, renders a sprite instead of a colored rectangle.
+## item_size is derived from the texture automatically.
+var item_texture: Texture2D = null
+
 var home_position: Vector2
 var is_dragging: bool = false
 var is_locked: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 var original_z_index: int = 0
 
-var _visual: ColorRect
+var _visual: CanvasItem  # ColorRect or Sprite2D
 var _label: Label
 var _target_zone: Node2D = null
 
@@ -25,12 +29,29 @@ func _ready() -> void:
 
 
 func _build_visual() -> void:
+	if item_texture:
+		_build_sprite_visual()
+	else:
+		_build_placeholder_visual()
+
+
+func _build_sprite_visual() -> void:
+	item_size = item_texture.get_size()
+	var sprite := Sprite2D.new()
+	sprite.texture = item_texture
+	# Sprite2D is centered by default — no position offset needed
+	add_child(sprite)
+	_visual = sprite
+
+
+func _build_placeholder_visual() -> void:
 	# Item body
-	_visual = ColorRect.new()
-	_visual.size = item_size
-	_visual.position = -item_size / 2  # Center the rect on the node
-	_visual.color = item_color
-	add_child(_visual)
+	var rect := ColorRect.new()
+	rect.size = item_size
+	rect.position = -item_size / 2
+	rect.color = item_color
+	add_child(rect)
+	_visual = rect
 
 	# Rounded corners via a StyleBoxFlat
 	var style := StyleBoxFlat.new()
@@ -44,7 +65,7 @@ func _build_visual() -> void:
 	style.border_width_right = 3
 	style.border_width_bottom = 3
 	style.border_color = item_color.darkened(0.3)
-	_visual.add_theme_stylebox_override("panel", style)
+	rect.add_theme_stylebox_override("panel", style)
 
 	# Name label
 	_label = Label.new()
