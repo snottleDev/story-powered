@@ -48,17 +48,28 @@ This directory contains a log of each Claude session spent working on this proje
 **File**: `2026-02-17_session_03.md`
 **Milestone**: Prototype Sprint
 **Summary**: Built first drag-and-drop prototype (suitcase packing). Partial iOS export setup — blocked on USB cable for device provisioning.
-**Status**: In Progress
+**Status**: Complete
 
 **Key Decisions**:
 - Matched target zones with silhouette hints
 - Stub autoloads to keep project loadable
 
+### Session 04: [2026-02-18] - Refactor Prototype 1 into Reusable Engine
+**File**: `2026-02-18_session_04.md`
+**Milestone**: Prototype Sprint
+**Summary**: Extracted drag-drop mechanic into reusable JSON-driven engine. Added optional texture support with placeholder fallback. Fixed display scaling for iPhone.
+**Status**: Complete
+
+**Key Decisions**:
+- Three-part puzzle architecture: JSON data + shared engine + visual wrapper
+- Individual textures over sprite sheets for simple scenes
+- Stretch aspect "keep" for consistent layout across devices
+
 ---
 
 ## Quick Stats
 
-**Total Sessions**: 3
+**Total Sessions**: 4
 **Current Milestone**: Prototype Sprint (before Milestone 1)
 **Project Start Date**: 2026-02-16
 **Repository**: https://github.com/snottleDev/story-powered
@@ -79,4 +90,4 @@ When adding new sessions, use this format:
 
 ---
 
-*Last Updated: 2026-02-17*
+*Last Updated: 2026-02-18*

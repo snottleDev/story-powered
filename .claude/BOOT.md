@@ -25,8 +25,8 @@
 
 **Current Milestone**: Prototype Sprint (before Milestone 1)
 **Active Branch**: `dev`
-**Last Session**: 2026-02-17
-**Last Commit**: Prototype 1 — suitcase packing scene built and committed
+**Last Session**: 2026-02-18
+**Last Commit**: Refactored Prototype 1 into reusable drag-drop puzzle engine, fixed display scaling
 
 ---
 
@@ -35,7 +35,7 @@
 **Current Focus**: Prototype Sprint — 6 standalone interaction experiments in `/prototypes`
 
 **Prototype Sprint — Build Order**:
-- [x] Prototype 1: Suitcase packing — drag & drop to target zones
+- [x] Prototype 1: Suitcase packing — drag & drop to target zones (refactored into reusable engine)
 - [ ] Prototype 2: Cleaning room — tap to remove objects
 - [ ] Prototype 3: Bring into focus — slider(s)
 - [ ] Prototype 4: Memory game — sequential tap + match logic
@@ -58,7 +58,7 @@
 ## Prototype Sprint Notes
 
 **Goal**: Discover what interactions feel right before locking down architecture or data format.
-**Rules**: Each prototype is fully self-contained — one Godot scene, no shared code, no architecture. Feel over structure.
+**Rules**: Each prototype is self-contained in its folder. Shared drag-drop engine lives in `prototypes/01_suitcase_packing/` and can be reused by other prototypes. Feel over structure.
 **Each prototype should have**: A rough story context + a simple success state (input → response → feedback).
 **Location**: `/prototypes` folder in the repo.
 **Build order rationale**: Start simple (drag, tap) and work up to complex (brush reveal, shake).
@@ -94,6 +94,9 @@
 - Prototypes use rough story context (suitcase, cleaning, focus, memory, polaroids, painting)
 - Session log filenames include time to avoid same-day conflicts: `YYYY-MM-DD_HHMM_session_##.md`
 - Claude Code is the sole writer to the repository — Claude.ai (browser) does not commit or push
+- Stretch aspect "keep" for consistent 1080x1920 layout across devices
+- Drag-drop puzzles: JSON config + reusable engine + visual wrapper per puzzle
+- Items support optional textures with colored placeholder fallback
 
 **Technical Approach**:
 - Godot 4.x for mobile (Android & iOS)
@@ -135,4 +138,4 @@
 
 ---
 
-*Last Updated: 2026-02-17*
+*Last Updated: 2026-02-18*
