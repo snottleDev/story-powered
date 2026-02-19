@@ -110,9 +110,13 @@
 
 **IMPORTANT — One writer rule**: To prevent files getting out of sync, only Claude Code (terminal) makes commits and pushes to GitHub. Claude.ai (browser) is read-only on the repository.
 
+**IMPORTANT — No code in browser**: Claude.ai (browser) must NEVER write full implementation code — no complete scripts, no file contents ready to paste. It should discuss architecture, describe approaches, list what files/functions are needed, and explain logic in plain English. When the conversation reaches the point where code needs to be written, Claude.ai should stop and tell the user: "Hand this off to Claude Code now — here's a summary of what to build." The summary should describe *what* to implement, not provide the literal code. This prevents awkward copy-paste workflows and keeps Claude Code as the sole author of all project files.
+
 | Task | Claude.ai (browser) | Claude Code (terminal) |
 |------|-------------------|----------------------|
 | Planning & decisions | ✅ Yes | — |
+| Architecture & approach discussion | ✅ Yes | — |
+| Writing implementation code | ❌ No | ✅ Yes |
 | Reading files for context | ✅ Yes | ✅ Yes |
 | Writing session log content | ✅ Drafts it | ✅ Creates & commits it |
 | Updating BOOT.md | ❌ No | ✅ Yes |
