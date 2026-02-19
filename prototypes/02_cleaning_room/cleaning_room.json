@@ -1,0 +1,57 @@
+{
+    "title": "Tidy Up!",
+    "subtitle": "Tap each item to clean the room",
+    "success_text": "Spotless!",
+    "background_color": [0.93, 0.90, 0.86],
+    "items": [
+        {
+            "id": "clothes",
+            "label": "Clothes",
+            "color": [0.4, 0.55, 0.80],
+            "size": [180, 140],
+            "position": [0.22, 0.28]
+        },
+        {
+            "id": "cup",
+            "label": "Cup",
+            "color": [0.85, 0.45, 0.35],
+            "size": [110, 130],
+            "position": [0.72, 0.22]
+        },
+        {
+            "id": "book_pile",
+            "label": "Books",
+            "color": [0.50, 0.35, 0.20],
+            "size": [160, 120],
+            "position": [0.55, 0.48]
+        },
+        {
+            "id": "shoe",
+            "label": "Shoe",
+            "color": [0.30, 0.25, 0.20],
+            "size": [150, 100],
+            "position": [0.18, 0.62]
+        },
+        {
+            "id": "bag",
+            "label": "Bag",
+            "color": [0.60, 0.45, 0.65],
+            "size": [160, 150],
+            "position": [0.78, 0.58]
+        },
+        {
+            "id": "wrapper",
+            "label": "Wrapper",
+            "color": [0.85, 0.80, 0.30],
+            "size": [120, 80],
+            "position": [0.38, 0.75]
+        },
+        {
+            "id": "magazine",
+            "label": "Magazine",
+            "color": [0.35, 0.65, 0.45],
+            "size": [150, 110],
+            "position": [0.65, 0.82]
+        }
+    ]
+}
