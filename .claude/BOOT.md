@@ -25,8 +25,8 @@
 
 **Current Milestone**: Prototype Sprint (before Milestone 1)
 **Active Branch**: `dev`
-**Last Session**: 2026-02-18
-**Last Commit**: Refactored Prototype 1 into reusable drag-drop puzzle engine, fixed display scaling
+**Last Session**: 2026-02-19
+**Last Commit**: Add P2 tidy mode and P3 bring-into-focus slider puzzle
 
 ---
 
@@ -36,8 +36,8 @@
 
 **Prototype Sprint — Build Order**:
 - [x] Prototype 1: Suitcase packing — drag & drop to target zones (refactored into reusable engine)
-- [ ] Prototype 2: Cleaning room — tap to remove objects
-- [ ] Prototype 3: Bring into focus — slider(s)
+- [x] Prototype 2: Cleaning room — tap to remove/tidy objects
+- [x] Prototype 3: Bring into focus — slider(s), 3 difficulty levels
 - [ ] Prototype 4: Memory game — sequential tap + match logic
 - [ ] Prototype 5: Polaroid map — shake/swipe gesture + reveal animation
 - [ ] Prototype 6: Painting reveal — continuous brush stroke + progressive image reveal
@@ -142,4 +142,4 @@
 
 ---
 
-*Last Updated: 2026-02-18*
+*Last Updated: 2026-02-19*

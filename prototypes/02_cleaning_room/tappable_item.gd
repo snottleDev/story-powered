@@ -1,6 +1,7 @@
 extends Node2D
 ## A single tappable clutter item.
-## Tap it → plays a pop-and-disappear animation → emits item_removed.
+## Mode "remove": tap → pop-and-disappear animation → emits item_removed.
+## Mode "tidy":   tap → swap to tidy graphic + slide to tidy position → emits item_removed.
 ## Supports an optional texture; falls back to a colored placeholder with label.
 
 signal item_removed(item_id: String)
@@ -9,10 +10,19 @@ signal item_removed(item_id: String)
 @export var item_color: Color = Color.WHITE
 @export var item_size: Vector2 = Vector2(160, 160)
 
+## "remove" (disappear on tap) or "tidy" (swap graphic + reposition)
+var item_mode: String = "remove"
+
 ## Optional texture — set by the engine after load. If null, uses placeholder.
 var item_texture: Texture2D = null
 
-var _is_removed: bool = false  # Guard against double-taps during animation
+## Tidy-mode target state (ignored when mode == "remove")
+var tidy_position: Vector2 = Vector2.ZERO
+var tidy_color: Color = Color.WHITE
+var tidy_size: Vector2 = Vector2(160, 160)
+var tidy_texture: Texture2D = null
+
+var _is_done: bool = false  # Guard against double-taps during animation
 
 
 func _ready() -> void:
@@ -75,7 +85,7 @@ func _build_placeholder_visual() -> void:
 # ── Input ──
 
 func _input(event: InputEvent) -> void:
-	if _is_removed:
+	if _is_done:
 		return
 
 	var tapped := false
@@ -94,7 +104,10 @@ func _input(event: InputEvent) -> void:
 				get_viewport().set_input_as_handled()
 
 	if tapped:
-		_play_remove_animation()
+		if item_mode == "tidy":
+			_play_tidy_animation()
+		else:
+			_play_remove_animation()
 
 
 func _is_point_inside(point: Vector2) -> bool:
@@ -107,7 +120,7 @@ func _is_point_inside(point: Vector2) -> bool:
 # ── Animation ──
 
 func _play_remove_animation() -> void:
-	_is_removed = true  # Block further taps immediately
+	_is_done = true  # Block further taps immediately
 
 	# Quick pop: scale up slightly, then shrink to nothing while fading out
 	var tween := create_tween()
@@ -122,6 +135,38 @@ func _play_remove_animation() -> void:
 		.set_ease(Tween.EASE_IN)
 	# Emit signal after animation finishes
 	tween.chain().tween_callback(_on_remove_complete)
+
+
+func _play_tidy_animation() -> void:
+	_is_done = true
+
+	# Quick bounce, then rebuild with tidy visuals and slide to tidy position
+	var tween := create_tween()
+	tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.06) \
+		.set_ease(Tween.EASE_OUT)
+	tween.tween_callback(_swap_to_tidy_visual)
+	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.08) \
+		.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", tidy_position, 0.25) \
+		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(_on_tidy_complete)
+
+
+func _swap_to_tidy_visual() -> void:
+	# Remove all current visual children
+	for child in get_children():
+		child.queue_free()
+
+	# Apply tidy state
+	item_color = tidy_color
+	item_size = tidy_size
+	item_texture = tidy_texture
+	_build_visual()
+
+
+func _on_tidy_complete() -> void:
+	item_removed.emit(item_id)
+	# Item stays in the scene — it's now tidy
 
 
 func _on_remove_complete() -> void:

@@ -88,13 +88,15 @@ func _build_items() -> void:
 		add_child(item)
 
 
-func _create_item(item_def: Dictionary) -> Node2D:
-	# Convert percentage position to pixel position within the clutter area
-	var pct: Array = item_def.position
-	var px := Vector2(
+func _pct_to_px(pct: Array) -> Vector2:
+	return Vector2(
 		_clutter_area.position.x + _clutter_area.size.x * pct[0],
 		_clutter_area.position.y + _clutter_area.size.y * pct[1]
 	)
+
+
+func _create_item(item_def: Dictionary) -> Node2D:
+	var px := _pct_to_px(item_def.position)
 
 	# Try loading a texture if the JSON specifies one
 	var texture: Texture2D = null
@@ -103,6 +105,7 @@ func _create_item(item_def: Dictionary) -> Node2D:
 
 	var c: Array = item_def.color
 	var sz: Array = item_def.size
+	var mode: String = item_def.get("mode", "remove")
 
 	var item := Node2D.new()
 	item.set_script(TappableItem)
@@ -111,7 +114,30 @@ func _create_item(item_def: Dictionary) -> Node2D:
 	item.item_color = Color(c[0], c[1], c[2])
 	item.item_size  = Vector2(sz[0], sz[1])
 	item.item_texture = texture  # null is fine — triggers placeholder
+	item.item_mode = mode
 	item.item_removed.connect(_on_item_removed)
+
+	# Tidy-mode: set target state
+	if mode == "tidy":
+		if item_def.has("tidy_position"):
+			item.tidy_position = _pct_to_px(item_def.tidy_position)
+		else:
+			item.tidy_position = px  # Stay in place if not specified
+
+		if item_def.has("tidy_color"):
+			var tc: Array = item_def.tidy_color
+			item.tidy_color = Color(tc[0], tc[1], tc[2])
+		else:
+			item.tidy_color = Color(c[0], c[1], c[2]).lightened(0.15)
+
+		if item_def.has("tidy_size"):
+			var ts: Array = item_def.tidy_size
+			item.tidy_size = Vector2(ts[0], ts[1])
+		else:
+			item.tidy_size = Vector2(sz[0], sz[1])
+
+		if item_def.has("tidy_texture") and ResourceLoader.exists(item_def.tidy_texture):
+			item.tidy_texture = load(item_def.tidy_texture)
 
 	return item
 
