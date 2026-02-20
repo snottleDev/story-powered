@@ -1,0 +1,44 @@
+{
+    "title": "Memories",
+    "subtitle": "Swipe down to develop each photo",
+    "success_text": "All Remembered",
+    "swipes_to_develop": 4,
+    "board_area": [0.03, 0.12, 0.94, 0.55],
+    "polaroids": [
+        {
+            "id": "photo_1",
+            "label": "The Beach",
+            "color": [0.25, 0.55, 0.80],
+            "pin_position": [0.18, 0.22],
+            "pin_rotation": -5
+        },
+        {
+            "id": "photo_2",
+            "label": "Old House",
+            "color": [0.60, 0.45, 0.30],
+            "pin_position": [0.55, 0.15],
+            "pin_rotation": 3
+        },
+        {
+            "id": "photo_3",
+            "label": "The Garden",
+            "color": [0.35, 0.65, 0.30],
+            "pin_position": [0.82, 0.28],
+            "pin_rotation": -2
+        },
+        {
+            "id": "photo_4",
+            "label": "City Lights",
+            "color": [0.20, 0.18, 0.35],
+            "pin_position": [0.35, 0.48],
+            "pin_rotation": 7
+        },
+        {
+            "id": "photo_5",
+            "label": "First Snow",
+            "color": [0.75, 0.82, 0.90],
+            "pin_position": [0.70, 0.52],
+            "pin_rotation": -4
+        }
+    ]
+}

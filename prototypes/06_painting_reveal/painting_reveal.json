@@ -1,0 +1,9 @@
+{
+    "title": "Uncover",
+    "subtitle": "Brush away the paint to reveal what's beneath",
+    "success_text": "Revealed!",
+    "image": "res://icon.svg",
+    "cover_color": [0.35, 0.32, 0.28],
+    "brush_radius": 60,
+    "reveal_threshold": 0.80
+}

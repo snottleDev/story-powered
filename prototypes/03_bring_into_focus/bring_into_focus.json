@@ -1,78 +1,78 @@
 {
-    "title": "Bring Into Focus",
-    "image": "res://icon.svg",
-    "levels": [
-        {
-            "id": "simple_focus",
-            "label": "Adjust the focus",
-            "effects": [
-                {
-                    "id": "blur",
-                    "label": "Focus",
-                    "min": 0.0,
-                    "max": 1.0,
-                    "start": 0.85,
-                    "target": 0.0,
-                    "tolerance": 0.06
-                }
-            ]
-        },
-        {
-            "id": "double_vision",
-            "label": "Align and focus",
-            "effects": [
-                {
-                    "id": "offset",
-                    "label": "Align",
-                    "min": -1.0,
-                    "max": 1.0,
-                    "start": 0.7,
-                    "target": 0.0,
-                    "tolerance": 0.06
-                },
-                {
-                    "id": "blur",
-                    "label": "Focus",
-                    "min": 0.0,
-                    "max": 1.0,
-                    "start": 0.65,
-                    "target": 0.0,
-                    "tolerance": 0.06
-                }
-            ]
-        },
-        {
-            "id": "full_correction",
-            "label": "Align, focus, and correct the distortion",
-            "effects": [
-                {
-                    "id": "offset",
-                    "label": "Align",
-                    "min": -1.0,
-                    "max": 1.0,
-                    "start": -0.6,
-                    "target": 0.0,
-                    "tolerance": 0.06
-                },
-                {
-                    "id": "blur",
-                    "label": "Focus",
-                    "min": 0.0,
-                    "max": 1.0,
-                    "start": 0.55,
-                    "target": 0.0,
-                    "tolerance": 0.06
-                },
-                {
-                    "id": "distortion",
-                    "label": "Correct",
-                    "min": 0.0,
-                    "max": 1.0,
-                    "start": 0.7,
-                    "target": 0.0,
-                    "tolerance": 0.06
-                }
-            ]
-        }
-    ]
+	"title": "Bring Into Focus",
+	"image": "res://icon.svg",
+	"levels": [
+		{
+			"id": "simple_focus",
+			"label": "Adjust the focus",
+			"effects": [
+				{
+					"id": "blur",
+					"label": "Focus",
+					"min": 0.0,
+					"max": 1.0,
+					"start": 0.85,
+					"target": 0.0,
+					"tolerance": 0.06
+				}
+			]
+		},
+		{
+			"id": "double_vision",
+			"label": "Align and focus",
+			"effects": [
+				{
+					"id": "offset",
+					"label": "Align",
+					"min": -1.0,
+					"max": 1.0,
+					"start": 0.7,
+					"target": 0.0,
+					"tolerance": 0.06
+				},
+				{
+					"id": "blur",
+					"label": "Focus",
+					"min": 0.0,
+					"max": 1.0,
+					"start": 0.65,
+					"target": 0.0,
+					"tolerance": 0.06
+				}
+			]
+		},
+		{
+			"id": "full_correction",
+			"label": "Align, focus, and correct the distortion",
+			"effects": [
+				{
+					"id": "offset",
+					"label": "Align",
+					"min": -1.0,
+					"max": 1.0,
+					"start": -0.6,
+					"target": 0.0,
+					"tolerance": 0.06
+				},
+				{
+					"id": "blur",
+					"label": "Focus",
+					"min": 0.0,
+					"max": 1.0,
+					"start": 0.55,
+					"target": 0.0,
+					"tolerance": 0.06
+				},
+				{
+					"id": "distortion",
+					"label": "Correct",
+					"min": 0.0,
+					"max": 1.0,
+					"start": 0.7,
+					"target": 0.0,
+					"tolerance": 0.06
+				}
+			]
+		}
+	]
 }

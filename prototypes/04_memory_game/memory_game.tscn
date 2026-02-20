@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://memory_game"]
+
+[ext_resource type="Script" path="res://prototypes/04_memory_game/memory_game.gd" id="1_wrapper"]
+
+[node name="MemoryGame" type="Node2D"]
+script = ExtResource("1_wrapper")
