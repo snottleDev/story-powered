@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Story-Powered"
 config/description="Interactive story game with data-driven narrative system"
-run/main_scene="res://prototypes/06_painting_reveal/painting_reveal.tscn"
+run/main_scene="res://prototypes/07_bridge_scene/bridge_scene.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

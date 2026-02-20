@@ -26,21 +26,24 @@
 **Current Milestone**: Prototype Sprint (before Milestone 1)
 **Active Branch**: `dev`
 **Last Session**: 2026-02-20
-**Last Commit**: Complete prototype sprint — add P4 memory, P5 polaroid, P6 painting
+**Last Commit**: Add P7 bridge scene — scene flow prototype with parallax and interaction
 
 ---
 
 ## Next Priority
 
-**Current Focus**: Prototype Sprint — 6 standalone interaction experiments in `/prototypes`
+**Current Focus**: Scene flow prototype, then Milestone 1
 
-**Prototype Sprint — Build Order**:
+**Prototype Sprint — Build Order** (all complete):
 - [x] Prototype 1: Suitcase packing — drag & drop to target zones (refactored into reusable engine)
 - [x] Prototype 2: Cleaning room — tap to remove/tidy objects
 - [x] Prototype 3: Bring into focus — slider(s), 3 difficulty levels
 - [x] Prototype 4: Memory game — flip & match pairs (auto-sizing grid)
 - [x] Prototype 5: Polaroid reveal — swipe/shake to develop, pin to board
 - [x] Prototype 6: Painting reveal — brush away cover layer with mask shader
+
+**Scene Flow Prototype**:
+- [x] Prototype 7: Bridge scene — narrative visuals + integrated interaction + parallax camera
 
 **iOS Testing**:
 - [x] Install Xcode & partial iOS export setup
@@ -142,4 +145,4 @@
 
 ---
 
-*Last Updated: 2026-02-20*
+*Last Updated: 2026-02-20 (evening)*
