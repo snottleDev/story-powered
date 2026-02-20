@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c8xk2mq1v3a5b"]
+
+[ext_resource type="Script" uid="uid://cr5ymifc50bxe" path="res://prototypes/01_suitcase_packing/suitcase_packing.gd" id="1_main"]
+
+[node name="SuitcasePacking" type="Node2D" unique_id=2141152930]
+script = ExtResource("1_main")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cleaning_room"]
+
+[ext_resource type="Script" path="res://prototypes/02_cleaning_room/cleaning_room.gd" id="1_wrapper"]
+
+[node name="CleaningRoom" type="Node2D"]
+script = ExtResource("1_wrapper")

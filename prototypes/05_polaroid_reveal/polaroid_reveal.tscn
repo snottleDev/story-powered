@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://polaroid_reveal"]
+
+[ext_resource type="Script" path="res://prototypes/05_polaroid_reveal/polaroid_reveal.gd" id="1_wrapper"]
+
+[node name="PolaroidReveal" type="Node2D"]
+script = ExtResource("1_wrapper")

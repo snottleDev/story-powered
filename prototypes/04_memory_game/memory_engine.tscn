@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://memory_engine"]
+
+[ext_resource type="Script" path="res://prototypes/04_memory_game/memory_engine.gd" id="1_engine"]
+
+[node name="MemoryEngine" type="Node2D"]
+script = ExtResource("1_engine")

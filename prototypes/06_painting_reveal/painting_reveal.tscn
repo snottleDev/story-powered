@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://painting_reveal"]
+
+[ext_resource type="Script" path="res://prototypes/06_painting_reveal/painting_reveal.gd" id="1_wrapper"]
+
+[node name="PaintingReveal" type="Node2D"]
+script = ExtResource("1_wrapper")
