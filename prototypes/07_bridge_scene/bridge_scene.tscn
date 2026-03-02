@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bridge_scene"]
+[gd_scene format=3 uid="uid://n7oii2g84fbq"]
 
-[ext_resource type="Script" path="res://prototypes/07_bridge_scene/bridge_scene.gd" id="1_scene"]
+[ext_resource type="Script" uid="uid://3lalmvvhw6xk" path="res://prototypes/07_bridge_scene/bridge_scene.gd" id="1_scene"]
 
-[node name="BridgeScene" type="Node2D"]
+[node name="BridgeScene" type="Node2D" unique_id=1997013901]
 script = ExtResource("1_scene")
